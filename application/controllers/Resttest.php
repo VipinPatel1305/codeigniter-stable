@@ -23,7 +23,8 @@ class Resttest extends REST_Controller {
         public  function a_get()
         {
             $id = $this->get('id');
-        	$sample = ["name" => "carl", "age"=> 544];
+        	$sample = ["name" => "carl johnson", "age"=> 544];
+            $err_sample = ["name" => "error", "age"=> 0];
 
             if($id == 1)
             {
@@ -31,9 +32,8 @@ class Resttest extends REST_Controller {
             }
             else
             {
-                $this->response($sample, REST_Controller::HTTP_BAD_REQUEST);    
-            }
-        	
+                $this->response($err_sample, REST_Controller::HTTP_BAD_REQUEST);    
+            }    	
         }
 
 	public function users_get()
